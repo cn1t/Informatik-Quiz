@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scoreboard</title>
+
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+         * {
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            font-size: 1.4rem;
+         }
+
+         body {
+            background-color: #d2ad69;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+
+         #title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 1vh;
+         }
+
+         #title-image {
+            width: 100%;
+         }
+
+         .content-below-image {
+            text-align: center;
+         }
+
+         .table-container {
+            display: flex;
+         }
+
+         table {
+            border-collapse: collapse;
+            width: 100%;
+         }
+
+         th,
+         td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+         }
+
+         th {
+            background-color: #f2f2f2;
+         }
+
+         td {
+            color: #ffffff;
+         }
+
+         tbody > tr:first-child > td:first-child {
+            color: rgb(255, 255, 90);
+         }
+
+         tbody > tr:nth-child(2) > td:first-child {
+            color: rgb(206, 206, 206);
+         }
+
+         tbody > tr:nth-child(3) > td:first-child {
+            color: rgb(255, 195, 64);
+         }
+      </style>
+
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+  </head>
+      <div hx-get="/api/v1/scoreboard" hx-trigger="load, every 1s" ></div>
+  </body>
+</html>

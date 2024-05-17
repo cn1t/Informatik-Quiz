@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+* {
+  font-family: 'Lexend', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d2ad69;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus{
+  outline: none;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+#title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1vh;
+}
+
+#title-image {
+  width: 70%;
+}
+
+.content-below-image {
+  text-align: center;
+}
+
+#name {
+  font-size: 1.4rem;
+  margin-bottom: 1vh;
+  width: calc(100% - 0.6rem);
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+}
+
+#btn-play {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1vh;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  background-color: #2f2f2e;
+  cursor: pointer;
+}
+
+#btn-play:hover {
+  background-color: #2f2f2eb9;
+}
+
+#btn-play:active {
+  background-color: #2f2f2e90;
+}
+
+.text {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+#text2 {
+  white-space: pre-line;
+}
+
+#exercise-image {
+  margin: 2vh;
+  max-width: 30vw;
+}
+
+.exercise-btn {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1vh;
+  width: calc(33.3% - 10px);
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  background-color: #2f2f2e;
+  cursor: pointer;
+}
+
+.exercise-btn:hover {
+  background-color: #2f2f2eb9;
+}
+
+.exercise-btn:active {
+  background-color: #2f2f2e90;
+}
+
+.exercise-btn:nth-child(2n) {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.correct-answer {
+  background-color: #8bc969af;
+}
+
+.wrong-answer {
+  background-color: #c96969af;
+}
+
+.correct-answer:hover {
+  background-color: #8bc969;
+}
+
+.wrong-answer:hover {
+  background-color: #c96969;
+}
+
+#info-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 2vw;
+  text-align: left;
+  color: #ffffff;
+}
+
+#exercise-counter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 2vw;
+  font-size: 2rem;
+  text-align: left;
+  color: #ffffff;
+}
+
+.result-tag {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1.5vh;
+}
+
+.result-tag-span {
+  color: #927747;
+}
+
+#btn-replay {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1vh;
+  width: 70%;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  background-color: #2f2f2e;
+  cursor: pointer;
+}
+
+#btn-replay:hover {
+  background-color: #2f2f2eb9;
+}
+
+#btn-replay:active {
+  background-color: #2f2f2e90;
+}

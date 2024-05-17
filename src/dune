@@ -1,0 +1,12 @@
+(executable
+ (public_name fiber-web)
+ (name main)
+ (libraries core dream)
+ (preprocess
+  (pps ppx_jane lwt_ppx)))
+
+(rule
+ (targets scoreboard.ml)
+ (deps scoreboard.eml.html)
+ (action
+  (run dream_eml %{deps} --workspace %{workspace_root})))

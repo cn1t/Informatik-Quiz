@@ -1,0 +1,188 @@
+{
+  "leicht": {
+    "Biber am Fluss": {
+      "text1": "Eine Biberfamilie lebt am Fluss. Der Fluss ist zu breit, um einen Baumstamm darüber legen zu können. Glücklicherweise ragen ein paar große Geröllsteine aus dem Wasser. So können die Biber mit mehreren Baumstämmen eine Flussüberquerung bauen (siehe Bild).",
+      "text2": "Die Steine rollen auf dem sandigen Flussboden immer wieder weg. Deswegen ist einer der drei Steine besonders wichtig: Wenn der weg rollt, gibt es keinen Weg mehr über den Fluss.",
+      "image": "biber-am-fluss.png",
+      "options": [
+        "Stein 1",
+        "Stein 2RICHTIG",
+        "Stein 3",
+        "Alle Steine sind gleich wichtig"
+      ]
+    },
+    "Wer war's?": {
+      "text1": "Sechs Kinder spielen draußen mit dem Ball. Es scheppert und klirrt! Ich laufe zum Fenster und sehe durch die zerbrochene Scheibe ein Kind wegrennen. Es hat kurze Haare und trägt eine lange Hose.",
+      "text2": "Wer war's?",
+      "image": "wer-wars.png",
+      "options": [
+        "Jana",
+        "Eva",
+        "Jojo",
+        "Anne",
+        "DavidRICHTIG",
+        "Tobi"
+      ]
+    },
+    "Vogelhaus": {
+      "text1": "Tim wünscht sich zum Geburtstag ein Vogelhaus. Tim sagt: 'Ich möchte ein Vogelhaus mit zwei Fenstern und einem Herzen.'",
+      "text2": "Welches Vogelhaus ist das richtige für Tim? (Der runde Eingang ist kein Fenster.)",
+      "image": "vogelhaus.png",
+      "options": [
+        "Vogelhaus A",
+        "Vogelhaus BRICHTIG",
+        "Vogelhaus C",
+        "Vogelhaus D"
+      ]
+    },
+    "Stellas Sterne": {
+      "text1": "Stella liebt Sterne. Sie zeichnet Sterne nach einem besonderen System. Sie beschreibt jeden Stern mit nur zwei Zahlen, z.B. '5:2'. Die erste Zahl gibt die Anzahl der Spitzen an. Die zweite Zahl legt fest, ob Verbindungslinien immer zur nächsten Spitze gezeichnet werden (dann ist es eine 1) oder zur zweitnächsten (dann ist es eine 2) usw. Hier siehst du einige von Stellas Sternen:",
+      "text2": "Wie würde Stella den vierten Stern beschreiben?",
+      "image": "stellas-sterne.png",
+      "options": [
+        "5:3",
+        "7:2",
+        "6:3",
+        "6:2RICHTIG"
+      ]
+    },
+    "Bibertaler": {
+      "text1": "Bibertaler gibt es nur als Münzen, und zwar 1, 2, 4, 8 und 16 Bibertaler. Die Biber bezahlen immer den genauen Betrag, mit so wenigen Münzen wie möglich. Ein Biber kauft Holz und muss 13 Bibertaler bezahlen.",
+      "text2": "Mit welchen Münzen bezahlt der Biber?",
+      "image": "bibertaler.png",
+      "options": [
+        "8, 4 und 1RICHTIG",
+        "8 und 4",
+        "8, 2 und 1",
+        "Es ist nicht möglich"
+      ]
+    },
+    "Kratzbilder": {
+      "text1": "Die kleinen Biber machen gerne Kratzbilder.",
+      "text2": "Die Biber kratzen nun diese Bilder auf. <strong>Bei welchem Bild können sie genau 3 bunte Farben sehen?</strong>",
+      "image": "kratzbilder.png",
+      "options": [
+        "A",
+        "B",
+        "CRICHTIG",
+        "D"
+      ]
+    },
+    "Lutscher": {
+      "text1": "Es gibt Lutscher, umsonst! Vier Biber stellen sich an. Wer an der Reihe ist, bekommt den Lutscher, der am nächsten ist. Der erste Biber bekommt also den Lutscher mit dem grünen Quadrat .",
+      "text2": "Wer bekommt den Lutscher mit dem roten Dreieck?",
+      "image": "lutscher.png",
+      "options": [
+        "Biber 1",
+        "Biber 2",
+        "Biber 3RICHTIG",
+        "Biber 4"
+      ]
+    },
+    "Stempel": {
+      "text1": "Biber Paul hat vier Stempel: A, B, C und D. Sie sind unten zu sehen. Damit hat er bereits die Formen 1 und 2 gestempelt. Für Figur 1 hat er Stempel B viermal benutzt. Für Figur 2 hat er Stempel B einmal und Stempel D zweimal benutzt. Jetzt will Paul Figur 3 stempeln. Seine Freundin Mia will ihm helfen. Mia sagt: „Für Figur 3 benutze ich genau einen Stempel zweimal.“",
+      "text2": "Welchen Stempel benutzt Mia?",
+      "image": "stempel.png",
+      "options": [
+        "Stempel A",
+        "Stempel BRICHTIG",
+        "Stempel C",
+        "Stempel D"
+      ]
+    },
+    "Anzieh-Stapel": {
+      "text1": "Abends legt Bruno seine Sachen auf einen Stapel. Dann geht es morgens schnell: Er zieht zuerst die oberste Sache an, dann die nächste - schön der Reihe nach. Aber manchmal ist der Stapel falsch: Dann sind am Ende die Socken über den Schuhen oder die Unterhose über der Hose. Oh je!",
+      "text2": "Diese Stapel sind fast alle falsch. Nur einer ist richtig. <strong>Welcher?</strong>",
+      "image": "anzieh-stapel.png",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "DRICHTIG",
+        "Keiner davon"
+      ]
+    }
+  },
+
+
+
+
+  "mittel": {
+    "Aufräumen": {
+      "text1": "Nach dem Freilichtkonzert im Park sammelt der Roboter den Müll auf, den das Publikum auf dem Rasen zurückgelassen hat. Der Roboter geht zu dem nächstgelegenen Ding, das auf dem Rasen herumliegt, und sammelt es auf. Dann geht er zu dem Ding, das jetzt am nächsten liegt, und sammelt es auf. So macht der Roboter immer weiter, bis er allen Müll aufgesammelt hat.",
+      "text2": "Welches Ding sammelt der Roboter als letztes auf?",
+      "image": "aufraeumen.png",
+      "options": [
+        "BecherRICHTIG",
+        "Dose",
+        "Papier",
+        "Apfel"
+      ]
+    },
+    "Zum Strand": {
+      "text1": "Es ist Sommer! Angela (12 Jahre alt) geht zum Strand. Sie nimmt ihren Bruder Fred mit. Fred ist 6 Jahre alt. Am Eingang zum Strand ist ein Schild:",
+      "text2": "Wer darf auf den Strand?",
+      "image": "zum-strand.png",
+      "options": [
+        "Angela und FredRICHTIG",
+        "Angela, aber Fred nicht",
+        "Angela nicht, aber Fred",
+        "Keiner von beiden"
+      ]
+    },
+    "Adas Stifte": {
+      "text1": "Ada hat eine Schachtel mit 10 Stiften. Einige zeigen nach oben, einige zeigen nach unten. Ada möchte, dass alle Stifte nach oben zeigen. Ada kann Stifte, die nebeneinander liegen, auf einmal umdrehen. Wenn die Stifte so liegen, muss sie nur zweimal Stifte umdrehen:",
+      "text2": "Wie oft muss Ada mindestens Stifte umdrehen, damit alle Stifte nach oben zeigen?",
+      "image": "adas-stifte.png",
+      "options": [
+        "5",
+        "4",
+        "2",
+        "6",
+        "3RICHTIG"
+      ]
+    }
+  },
+
+
+
+
+  "schwer": {
+    "Julias Turm": {
+      "text1": "In ihrem neuen Baukasten findet Julia vier Sorten Bauklötze. Sie erfindet Regeln, wie sie mit den Klötzen Türme bauen möchte. Das Bild zeigt Julias Regeln: Julia setzt nur dann einen Klotz auf einen anderen, wenn ein Pfeil vom unteren zum oberen Klotz zeigt.",
+      "text2": "Wenn Julia einen Turm baut, fängt sie mit irgendeinem Klotz an und hält sich dann genau an ihre Regeln. Sie hört auf, wenn sie keine Lust mehr hat - oder wenn es nach den Regeln nicht mehr weitergeht. <strong>Welchen Turm hat Julia gebaut?</strong>",
+      "image": "julias-turm.png",
+      "options": [
+        "A",
+        "B",
+        "CRICHTIG",
+        "D",
+        "Keiner davon"
+      ]
+    },
+    "Zeichenroboter": {
+      "text1": "Ein Roboter bewegt sich über ein Raster und zeichnet dabei Linien. Mit drei Zahlen kann man den Roboter steuern.Die Zahlen geben dem Roboter drei Schritte an, die er beliebig oft wiederholt. So entsteht aus den Zahlen ein Bild. Ein Beispiel: Aus den Zahlen 3, 1, 5 entsteht das Bild rechts, und zwar so: 1. gehe 3 Felder vor und drehe nach rechts (Schritt 1), 2. gehe 1 Felder vor und drehe nach rechts (Schritt 2) und 3. gehe 5 Felder vor und drehe nach rechts (Schritt 3).",
+      "text2": "Welches Bild entsteht aus den Zahlen 2, 2, 3?",
+      "image": "zeichenroboter.png",
+      "options": [
+        "A",
+        "BRICHTIG",
+        "C",
+        "D",
+        "Keines davon"
+      ]
+    },
+    "Claras Blumen": {
+      "text1": "Clara liebt Blumen! Im Blumenladen gibt es diese Sorten: Gladiolen, Lilien, Tulpen und Rosen. Jede Sorte ist in diesen Farben erhältlich: Weiß, Blau und Gelb.",
+      "text2": "Clara möchte einen Blumenstrauß kaufen. Aber sie hat besondere Wünsche:\r\r1. Jede Farbe soll genau zweimal vorkommen\r2. Blumen der gleichen Sorte sollen nicht die gleiche Farbe haben\r3. jede Sorte darf höchstens zweimal vorkommen\r\rWelchen Blumenstrauß wird Clara kaufen?",
+      "image": "claras-blumen.png",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "DRICHTIG",
+        "Keiner davon"
+      ]
+    }
+  }
+}
