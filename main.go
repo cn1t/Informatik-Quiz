@@ -22,7 +22,7 @@ type (
 		gorm.Model
 		Name       string     `json:"name" validate:"required,min=1,max=20"`
 		Score      int        `json:"score"`
-		Time 			 int 				`json:"time"`
+		Time       int        `json:"time"`
 		Difficulty Difficulty `json:"difficulty" validate:"required"`
 	}
 
@@ -47,7 +47,6 @@ type (
 var webfs embed.FS
 
 func main() {
-	println("SQUEAL")
 	engine := html.New("./views", ".html")
 	db, err := Connect("./fiber.sql")
 	if err != nil {
@@ -76,10 +75,9 @@ func main() {
 	v1.Get("/form", FiberHandler(Form, db))
 
 	// app.Listen(":3000")
-	
+
 	panic(app.Listen(":3000"))
 }
-
 
 // let rec quicksort = function
 //	| [] -> []
@@ -140,7 +138,7 @@ func ScoreBoardForm(c *fiber.Ctx, db *gorm.DB) error {
 	userScore := Score{
 		Name:       c.Query("name"),
 		Score:      c.QueryInt("score"),
-		Time:      c.QueryInt("time"),
+		Time:       c.QueryInt("time"),
 		Difficulty: difficulty,
 	}
 
@@ -167,7 +165,7 @@ func ScoreBoardForm(c *fiber.Ctx, db *gorm.DB) error {
 	}
 
 	db.Create(&userScore)
-	fmt.Printf("%v",userScore)
+	fmt.Printf("%v", userScore)
 	return c.SendString("aaaa")
 }
 
@@ -175,12 +173,12 @@ func filter(i []Score, f func(Score) bool) []Score {
 	switch len(i) {
 	case 0:
 		return []Score{}
-	case	1:
-	if f(i[0]) {
-		return i
-	} else {
-		return []Score{}
-	}
+	case 1:
+		if f(i[0]) {
+			return i
+		} else {
+			return []Score{}
+		}
 
 	default:
 		h := i[0]
@@ -194,7 +192,7 @@ func filter(i []Score, f func(Score) bool) []Score {
 }
 
 func Form(c *fiber.Ctx, db *gorm.DB) error {
-	return c.Render("form", fiber.Map{ })
+	return c.Render("form", fiber.Map{})
 }
 
 func max(a, b int) int {
@@ -215,11 +213,11 @@ func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 	var people []Score
 	db.Find(&people)
 
-	ff := func (p []Score) []Score {
+	ff := func(p []Score) []Score {
 		max := min(len(p), 10) // max index
-		return	quicksort(p)[0:max]
+		return quicksort(p)[0:max]
 	}
-	filt := func (i int ) func (Score) bool {
+	filt := func(i int) func(Score) bool {
 		return func(s Score) bool {
 			n, err := difficulty_of_int(i)
 			if err != nil {
@@ -240,7 +238,6 @@ func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 		"People3": ff(people3),
 	})
 }
-
 
 func FiberHandler(fn func(*fiber.Ctx, *gorm.DB) error, db *gorm.DB) fiber.Handler {
 	return func(c *fiber.Ctx) error {
