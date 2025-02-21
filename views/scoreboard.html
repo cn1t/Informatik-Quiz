@@ -25,7 +25,7 @@
                   <tbody>
                      {{range $index, $val := .People1}}
                      <tr>
-                        <td>#{{$index}}</td>
+                        <td>#{{inc $index}}</td>
                         <td>{{$val.Name}}</td>
                         <td>{{$val.Time}}</td>
                         <td>{{$val.Score}}</td>

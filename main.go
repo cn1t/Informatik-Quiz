@@ -48,6 +48,10 @@ var webfs embed.FS
 
 func main() {
 	engine := html.New("./views", ".html")
+	engine.AddFunc("inc", func(i int) int {
+		return i + 1
+	})
+
 	db, err := Connect("./fiber.sql")
 	if err != nil {
 		panic(err)
@@ -62,6 +66,34 @@ func main() {
 		},
 	})
 	app.Static("/", "./web")
+
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendFile("web/index.html")
+	})
+
+	v2 := app.Group("/api/v2", func(c *fiber.Ctx) error {
+		c.Set("Version", "v2")
+		return c.Next()
+	})
+
+	fmt.Printf("v2: %v\n", v2)
+
+	v2.Get("/new", FiberHandler(ScoreBoardForm, db))
+	v2.Get("/scoreboard", FiberHandler(ShowScoreBoard, db))
+	v2.Get("/form", FiberHandler(Form, db))
+
+	app.Server().MaxConnsPerIP = 10
+	app.Server().ReadTimeout = 10
+	app.Server().WriteTimeout = 10
+	app.Server().IdleTimeout = 10
+
+	for _, r := range app.Stack() {
+		for _, route := range r {
+			fmt.Printf("Route: %v\n", route.Path)
+		}
+	}
+
+	// append all routes
 
 	api := app.Group("/api")
 	v1 := api.Group("/v1", func(c *fiber.Ctx) error { // middleware for /api/v1
