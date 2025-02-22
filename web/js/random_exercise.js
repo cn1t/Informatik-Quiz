@@ -59,7 +59,7 @@ function displayRandomExercise(exercise) {
 
   let exerciseCounterNumber = parseInt(localStorage.getItem("exerciseCounter"));
 
-  exerciseCounter.innerText = exerciseCounterNumber + " / 10";
+  exerciseCounter.innerText = exerciseCounterNumber + " / 5";
 
   const titleElement = document.getElementById("title");
   titleElement.innerText = title;
@@ -94,12 +94,12 @@ function displayRandomExercise(exercise) {
         changeScore("correct");
 
         setTimeout(() => {
-          if (exerciseCounterNumber < 10) {
+          if (exerciseCounterNumber < 5) {
             localStorage.setItem("exerciseCounter", exerciseCounterNumber + 1);
 
-            if (localStorage.getItem("exerciseCounter") <= 5) {
+            if (localStorage.getItem("exerciseCounter") <= 2) {
               difficulty = "leicht";
-            } else if (localStorage.getItem("exerciseCounter") <= 8) {
+            } else if (localStorage.getItem("exerciseCounter") <= 4) {
               difficulty = "mittel";
             } else {
               difficulty = "schwer";
@@ -119,12 +119,12 @@ function displayRandomExercise(exercise) {
         changeScore("wrong");
 
         setTimeout(() => {
-          if (exerciseCounterNumber < 10) {
+          if (exerciseCounterNumber < 5) {
             localStorage.setItem("exerciseCounter", exerciseCounterNumber + 1);
 
-            if (localStorage.getItem("exerciseCounter") <= 5) {
+            if (localStorage.getItem("exerciseCounter") <= 2) {
               difficulty = "leicht";
-            } else if (localStorage.getItem("exerciseCounter") <= 8) {
+            } else if (localStorage.getItem("exerciseCounter") <= 4) {
               difficulty = "mittel";
             } else {
               difficulty = "schwer";
