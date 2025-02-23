@@ -11,12 +11,15 @@ This is not a problem for me, as the main goal is to get the kids interested in 
 
 
 ## Setup guide
-Go is required to run this project on the host machine. You can download it [here](https://golang.org/dl/).
+
+Either download it from the "Releases" tab or build it from source.<br>
+In that case Go is required to run this project on the host machine. You can download it [here](https://golang.org/dl/).
 
 ```sh
 git clone https://github.com/cn1t/informatikquizbiber.git
 cd informatikquizbiber
-go run main.go
+go build
+./informatikquizbiber.exe
 ```
 
 These are the websites you can visit (simply change ```localhost``` to the IP of the host machine if you want to access it from another device in the same network):
