@@ -27,7 +27,7 @@
                      <tr>
                         <td>#{{inc $index}}</td>
                         <td>{{$val.Name}}</td>
-                        <td>{{$val.Time}}s</td>
+                        <td>{{formatTime $val.Time}}</td>
                         <td>{{$val.Score}}</td>
                      </tr>
                      {{end}}

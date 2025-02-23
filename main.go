@@ -52,6 +52,15 @@ func main() {
 		return i + 1
 	})
 
+	engine.AddFunc("formatTime", func(seconds int) string {
+		minutes := seconds / 60
+		seconds = seconds % 60
+		if minutes > 0 {
+			return fmt.Sprintf("%dmin %ds", minutes, seconds)
+		}
+		return fmt.Sprintf("%ds", seconds)
+	})
+
 	db, err := Connect("./fiber.sql")
 	if err != nil {
 		panic(err)

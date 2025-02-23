@@ -47,7 +47,7 @@ function form(namennn, score, time) {
     localStorage.setItem("req", true);
 }
 
-form(namennn, score, seconds, 1);
+form(namennn, score, time, 1);
 clear_local_storage();
 
 replayBtn.addEventListener("click", () => {

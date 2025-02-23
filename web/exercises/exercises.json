@@ -84,8 +84,8 @@
       "text2": "Welchen Stempel benutzt Mia?",
       "image": "stempel.png",
       "options": [
-        "Stempel A",
-        "Stempel BRICHTIG",
+        "Stempel ARICHTIG",
+        "Stempel B",
         "Stempel C",
         "Stempel D"
       ]
