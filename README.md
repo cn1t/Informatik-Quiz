@@ -12,7 +12,7 @@ This is not a problem for me, as the main goal is to get the kids interested in 
 
 ## Setup guide
 
-Either download it from the "Releases" tab or build it from source.<br>
+Either run the .exe once you downloaded and unzipped the project or build it from source.<br>
 In that case Go is required to run this project on the host machine. You can download it [here](https://golang.org/dl/).
 
 ```sh
