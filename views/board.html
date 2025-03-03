@@ -5,6 +5,24 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Scoreboard</title>
 
+      <script>
+         function deleteUser(name, score) {
+            let rt = `/api/v1/rem/?name=${encodeURIComponent(name)}&score=${encodeURIComponent(score)}`;
+
+            fetch(rt, {
+               method: 'GET',
+            })
+               .then(response => {
+                  if (response.ok) {
+                     document.location.reload();
+                     console.log('User deleted successfully.');
+                  } else {
+                     console.error('Failed to delete user.');
+                  }
+               })
+               .catch(error => console.error('Error:', error));
+         }
+      </script>
    </head>
 
    <body style="height: 100vh;">
@@ -20,6 +38,7 @@
                         <th style="background-color: #2f2f2e2f;">Name</th>
                         <th style="background-color: #2f2f2e2f;">Zeit</th>
                         <th style="background-color: #2f2f2e2f;">Punkte</th>
+                        <th style="background-color: #2f2f2e2f;">Aktion</th> <!-- New column for delete button -->
                      </tr>
                   </thead>
                   <tbody>
@@ -29,6 +48,9 @@
                         <td>{{$val.Name}}</td>
                         <td>{{formatTime $val.Time}}</td>
                         <td>{{$val.Score}}</td>
+                        <td>
+                           <button onclick="deleteUser('{{$val.Name}}', '{{$val.Score}}')">Delete</button>
+                        </td>
                      </tr>
                      {{end}}
                   </tbody>

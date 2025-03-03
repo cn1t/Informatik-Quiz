@@ -44,7 +44,7 @@ type (
 )
 
 type U struct {
-	name string
+	name  string
 	score int
 }
 
@@ -57,6 +57,13 @@ func main() {
 	engine := html.New("./views", ".html")
 	engine.AddFunc("inc", func(i int) int {
 		return i + 1
+	})
+
+	engine.AddFunc("blacklist", func(name string, score int) bool {
+		return black_list[U{
+			name:  name,
+			score: score,
+		}]
 	})
 
 	engine.AddFunc("formatTime", func(seconds int) string {
@@ -98,7 +105,6 @@ func main() {
 	v2.Get("/scoreboard", FiberHandler(ShowScoreBoard, db))
 	v2.Get("/form", FiberHandler(Form, db))
 
-
 	for _, r := range app.Stack() {
 		for _, route := range r {
 			fmt.Printf("Route: %v\n", route.Path)
@@ -114,7 +120,6 @@ func main() {
 	})
 	v1.Get("/new", FiberHandler(ScoreBoardForm, db))
 
-	v1.Get("/new", FiberHandler(ScoreBoardForm, db))
 	v1.Get("/rem", FiberHandler(ScoreBoardFormREMOVE, db))
 
 	v1.Get("/scoreboard", FiberHandler(ShowScoreBoard, db))
@@ -126,6 +131,7 @@ func main() {
 }
 
 // let rec quicksort = function
+//
 //	| [] -> []
 //	| x::xs -> let smaller, larger = List.partition (fun y -> y < x) xs
 //	           in quicksort smaller @ (x::quicksort larger)
@@ -175,17 +181,14 @@ func ScoreBoardFormREMOVE(c *fiber.Ctx, db *gorm.DB) error {
 	log.Printf("Remove req: %v\n", c.String())
 
 	userScore := U{
-		name:       c.Query("name"),
-		score:      c.QueryInt("score"),
+		name:  c.Query("name"),
+		score: c.QueryInt("score"),
 	}
 	black_list[userScore] = false
-
 
 	// Validation
 	return c.SendString("tarsnel;fjads;fdljs")
 }
-
-
 
 // Params:
 // name: string min=1 max=20 time=1000
@@ -269,7 +272,6 @@ func min(a, b int) int {
 	return b
 }
 
-
 func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 	var people []Score
 	db.Find(&people)
@@ -287,10 +289,13 @@ func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 		}
 	}
 	filt_the_second_iteration := func(s Score) bool {
-		u := U {
-			name: s.Name,
+		u := U{
+			name:  s.Name,
 			score: s.Score,
 		}
+
+		fmt.Printf("%v", black_list)
+
 		val, ok := black_list[u]
 		if ok {
 			return val
@@ -299,10 +304,9 @@ func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 		}
 	}
 
-
-	people1 :=  filter(filter(people, filt(1)),filt_the_second_iteration)
-	people2 := filter(filter(people, filt(2)),filt_the_second_iteration)
-	people3 := filter(filter(people, filt(3)),filt_the_second_iteration)
+	people1 := filter(filter(people, filt(1)), filt_the_second_iteration)
+	people2 := filter(filter(people, filt(2)), filt_the_second_iteration)
+	people3 := filter(filter(people, filt(3)), filt_the_second_iteration)
 
 	log.Println(ff(people1))
 	return c.Render("scoreboard", fiber.Map{
@@ -328,8 +332,8 @@ func ShowBoard(c *fiber.Ctx, db *gorm.DB) error {
 		}
 	}
 	filt_the_second_iteration := func(s Score) bool {
-		u := U {
-			name: s.Name,
+		u := U{
+			name:  s.Name,
 			score: s.Score,
 		}
 		val, ok := black_list[u]
@@ -340,10 +344,9 @@ func ShowBoard(c *fiber.Ctx, db *gorm.DB) error {
 		}
 	}
 
-
-	people1 :=  filter(filter(people, filt(1)),filt_the_second_iteration)
-	people2 := filter(filter(people, filt(2)),filt_the_second_iteration)
-	people3 := filter(filter(people, filt(3)),filt_the_second_iteration)
+	people1 := filter(filter(people, filt(1)), filt_the_second_iteration)
+	people2 := filter(filter(people, filt(2)), filt_the_second_iteration)
+	people3 := filter(filter(people, filt(3)), filt_the_second_iteration)
 
 	log.Println(ff(people1))
 	return c.Render("board", fiber.Map{
@@ -352,10 +355,6 @@ func ShowBoard(c *fiber.Ctx, db *gorm.DB) error {
 		"People3": ff(people3),
 	})
 }
-
-
-
-
 
 func FiberHandler(fn func(*fiber.Ctx, *gorm.DB) error, db *gorm.DB) fiber.Handler {
 	return func(c *fiber.Ctx) error {
