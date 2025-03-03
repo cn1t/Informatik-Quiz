@@ -25,9 +25,9 @@ go build
 
 These are the websites you can visit (simply change ```localhost``` to the IP of the host machine if you want to access it from another device in the same network):
 
-Scoreboard: `http://localhost:3000/scoreboard.html`
-Quiz: `http://localhost:3000`
-Deletions: `http://localhost:3000/api/v1/delete`
+Scoreboard: `http://localhost:3000/scoreboard.html`<br>
+Quiz: `http://localhost:3000`<br>
+Deletion Panel: `http://localhost:3000/api/v1/delete`<br>
 
 
 
