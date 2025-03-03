@@ -7,6 +7,7 @@ It is also beeing used in future computer science lessons at our school.
 We had a couple PCs set up with this game running and the kids could play it and get a position on the leaderboard with their name, which was shown on the beamer, if they got a high score.
 
 Be aware that players can easily cheat through pressing ```CTRL + SHIFT + I```, then changing the localStorage values or through the URL-path (simply press ```F11``` so they cannot see that and it looks nicer).
+Also the deletion panel is not password protected.
 This is not a problem for me, as the main goal is to get the kids interested in computer science and not to have a fair competition.
 
 
