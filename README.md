@@ -26,6 +26,7 @@ These are the websites you can visit (simply change ```localhost``` to the IP of
 
 Scoreboard: `http://localhost:3000/scoreboard.html`
 Quiz: `http://localhost:3000`
+Deletions: `http://localhost:3000/api/v1/delete`
 
 
 
