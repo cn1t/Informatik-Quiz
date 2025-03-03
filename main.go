@@ -48,7 +48,7 @@ type U struct {
 	score int
 }
 
-var black_list = map[U]bool{}
+var black_list = map[string]bool{}
 
 //go:embed web/*
 var webfs embed.FS
@@ -60,10 +60,8 @@ func main() {
 	})
 
 	engine.AddFunc("blacklist", func(name string, score int) bool {
-		return black_list[U{
-			name:  name,
-			score: score,
-		}]
+		a := fmt.Sprintf("name: %s, score: %v", name, score)
+		return black_list[a]
 	})
 
 	engine.AddFunc("formatTime", func(seconds int) string {
@@ -184,7 +182,8 @@ func ScoreBoardFormREMOVE(c *fiber.Ctx, db *gorm.DB) error {
 		name:  c.Query("name"),
 		score: c.QueryInt("score"),
 	}
-	black_list[userScore] = false
+	a := fmt.Sprintf("name: %s, score: %v", userScore.name, userScore.score)
+	black_list[a] = false
 
 	// Validation
 	return c.SendString("tarsnel;fjads;fdljs")
@@ -225,6 +224,12 @@ func ScoreBoardForm(c *fiber.Ctx, db *gorm.DB) error {
 			Code:    fiber.ErrBadRequest.Code,
 			Message: strings.Join(errMsgs, " and "),
 		}
+	}
+
+	a := fmt.Sprintf("name: %s, score: %v", userScore.Name, userScore.Score)
+	_, ok := black_list[a]
+	if !ok {
+		black_list[a] = true
 	}
 
 	db.Create(&userScore)
@@ -288,21 +293,6 @@ func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 			return s.Difficulty == n
 		}
 	}
-	filt_the_second_iteration := func(s Score) bool {
-		u := U{
-			name:  s.Name,
-			score: s.Score,
-		}
-
-		fmt.Printf("%v", black_list)
-
-		val, ok := black_list[u]
-		if ok {
-			return val
-		} else {
-			return true
-		}
-	}
 
 	people1 := filter(filter(people, filt(1)), filt_the_second_iteration)
 	people2 := filter(filter(people, filt(2)), filt_the_second_iteration)
@@ -314,6 +304,12 @@ func ShowScoreBoard(c *fiber.Ctx, db *gorm.DB) error {
 		"People2": ff(people2),
 		"People3": ff(people3),
 	})
+}
+func filt_the_second_iteration(s Score) bool {
+
+	a := fmt.Sprintf("name: %s, score: %v", s.Name, s.Score)
+	val := black_list[a]
+	return val
 }
 func ShowBoard(c *fiber.Ctx, db *gorm.DB) error {
 	var people []Score
@@ -329,18 +325,6 @@ func ShowBoard(c *fiber.Ctx, db *gorm.DB) error {
 				panic("filter invalid difficulty")
 			}
 			return s.Difficulty == n
-		}
-	}
-	filt_the_second_iteration := func(s Score) bool {
-		u := U{
-			name:  s.Name,
-			score: s.Score,
-		}
-		val, ok := black_list[u]
-		if ok {
-			return val
-		} else {
-			return true
 		}
 	}
 
