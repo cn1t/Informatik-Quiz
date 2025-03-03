@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Scoreboard</title>
+
+   </head>
+
+   <body style="height: 100vh;">
+      <div class="center">
+         <div class="content-below-image">
+            <h1 id="title">Bestenliste</h1>
+
+            <div class="table-container">
+               <table>
+                  <thead>
+                     <tr>
+                        <th style="background-color: #2f2f2e2f;">Platz</th>
+                        <th style="background-color: #2f2f2e2f;">Name</th>
+                        <th style="background-color: #2f2f2e2f;">Zeit</th>
+                        <th style="background-color: #2f2f2e2f;">Punkte</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     {{range $index, $val := .People1}}
+                     <tr>
+                        <td>#{{inc $index}}</td>
+                        <td>{{$val.Name}}</td>
+                        <td>{{formatTime $val.Time}}</td>
+                        <td>{{$val.Score}}</td>
+                     </tr>
+                     {{end}}
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
